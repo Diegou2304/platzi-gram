@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from platzigram import views as local_view
 from posts import views as post_views
+from django.contrib import admin
 urlpatterns = [
     #Una vista es una funcion o una clase
+    path('admin/',admin.site.urls),
     path('hello-world/',local_view.hello_world),
     path('sorted',local_view.sort_integers),
     path('hi/<str:name>/<int:age>/',local_view.say_hi),
