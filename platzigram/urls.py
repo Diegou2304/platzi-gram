@@ -18,11 +18,14 @@ from django.urls import path
 from platzigram import views as local_view
 from posts import views as post_views
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
-    #Una vista es una funcion o una clase
-    path('admin/',admin.site.urls),
-    path('hello-world/',local_view.hello_world),
-    path('sorted',local_view.sort_integers),
-    path('hi/<str:name>/<int:age>/',local_view.say_hi),
-    path('posts/',post_views.list_posts)
-]
+                  # Una vista es una funcion o una clase
+                  path('admin/', admin.site.urls),
+                  path('hello-world/', local_view.hello_world),
+                  path('sorted', local_view.sort_integers),
+                  path('hi/<str:name>/<int:age>/', local_view.say_hi),
+                  path('posts/', post_views.list_posts)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
