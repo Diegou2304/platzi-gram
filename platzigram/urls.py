@@ -29,3 +29,4 @@ urlpatterns = [
                   path('hi/<str:name>/<int:age>/', local_view.say_hi),
                   path('posts/', post_views.list_posts)
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#Tenemos que añadir el static para que vaya a la direccion donde se encuentren las imagenes

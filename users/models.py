@@ -13,6 +13,7 @@ class Profile(models.Model):
     biography = models.TextField(blank=True)
     phone_number = models.CharField(max_length=50, blank=True)
 
+    #Seleccionamos donde queremos que se guarden nuestras imagenes
     picture = models.ImageField(upload_to='users/pictures',
                                 blank=True,
                                 null=True)

@@ -25,6 +25,7 @@ class ProfileAdmin(admin.ModelAdmin):
         'user__username'
 
     )
+    #Campos a mostrar para insertar
     fieldsets = (
         ('Profile', {
             'fields': (
